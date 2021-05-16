@@ -4,10 +4,17 @@
 <head>
 <title>HTML - 애국가</title>
 <meta charset="utf-8">
+<script>
+    var guitar = ['img.html','elon1.html','elon.html','elon2.html']
+    var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해']
+</script>
+<script src = "color.js"></script>
 </head>
 
 <body>
     <h1><a href="../index.html">home</a></h1>
+    <input type="button" value="night"
+onclick=" ndchanger(this); ">
     <h2>애국가</h2>
     
     <ol>
@@ -24,9 +31,14 @@
     </ol>
     <h2>기타</h2>
     <ul>
-    <li><a href="../guitar/img.html">데비악마 사진집❤️</a></li>
-    <li><a href="../guitar/elon.html">꼴은날</a></li>
-    </ul>
+        <script> 
+            var i = 0;
+            while(i < guitar.length , i < guitarname.length){
+                document.write('<li><a href="../guitar/'+guitar[i]+'">'+guitarname[i]+'</a></li>');
+            i = i + 1;
+            }
+        </script>
+        </ul>
 
 <h2>애국가 4절</h2>
 이 기상과 이 맘으로 충성을 다하여<br>
