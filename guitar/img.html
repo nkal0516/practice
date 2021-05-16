@@ -2,6 +2,10 @@
   <head>
     <meta charset="utf-8">
     <title>html-데비악마 사진모음</title>
+    <script>
+    var guitar = ['img.html','elon1.html','elon.html','elon2.html']
+    var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해']
+  </script>
   </head>
 
 <body>
@@ -23,8 +27,13 @@
   </ol>
   <h2>기타</h2>
   <ul>
-  <li><a href="img.html">데비악마 사진집❤️</a></li>
-  <li><a href="elon.html">꼴은날</a></li>
+  <script>
+      var i = 0;
+      while(i < guitar.length , i < guitarname.length){
+          document.write('<li><a href='+guitar[i]+'>'+guitarname[i]+'</a></li>');
+      i = i + 1;
+      }
+  </script>
   </ul>
 
   <p><img src="deviakuma.jpeg" height="500" alt="devi akuma" title="kawaii~">

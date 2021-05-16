@@ -4,6 +4,10 @@
 <head>
 <title>HTML - chess openings</title>
 <meta charset="utf-8">
+<script>
+    var guitar = ['img.html','elon1.html','elon.html','elon2.html']
+    var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해']
+</script>
 </head>
 
 <body>
@@ -26,9 +30,14 @@
     
     <h2>기타</h2>
     <ul>
-    <li><a href="../guitar/img.html">데비악마 사진집❤️</a></li>
-    <li><a href="../guitar/elon.html">꼴은날</a></li>
-    </ul>
+        <script>
+            var i = 0;
+            while(i < guitar.length , i < guitarname.length){
+                document.write('<li><a href="../guitar/'+guitar[i]+'">'+guitarname[i]+'</a></li>');
+            i = i + 1;
+            }
+        </script>
+        </ul>
     <p>
         <iframe width="560" height="315"
          src="https://www.youtube.com/embed/49H728S_VjM" 

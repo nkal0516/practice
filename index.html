@@ -4,22 +4,19 @@
 <head>
 <title>HTML - joonos</title>
 <meta charset="utf-8">
+<script>
+   var guitar = ['img.html','elon1.html','elon.html','elon2.html']
+   var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해']
+</script>
+<script src = "color.js"></script>
 </head>
 
 <body>
     <h1><a href="index.html">home</a></h1>
     
     <input type="button" value="night"
-    onclick=" var target = document.querySelector('body')
-    if(this.value==='night'){
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        this.value = 'day'}
-    else{
-        target.style.backgroundColor = 'white';
-        target.style.color ='black';
-        this.value='night'}
-    ">
+    onclick=" ndchanger(this); ">
+
     
      <h2>애국가</h2>
     
@@ -38,33 +35,48 @@
     </ol>
 
     <h2>기타</h2>
+    
     <ul>
-    <li><a href="guitar/img.html">데비악마 사진집❤️</a></li>
-    <li><a href="guitar/elon.html">꼴은날</a></li>
-    </ul>
+        <script>
+            var i = 0;
+            while(i < guitar.length , i < guitarname.length){
+                document.write('<li><a href=guitar/'+guitar[i]+'>'+guitarname[i]+'</a></li>');
+            i = i + 1;
+            }
+        </script>
+        </ul>
 
-    <input type="button" value="night"
-    onclick=" if(this.value==='night'){
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-        this.value = 'day'}
-    else{
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color ='black';
-        this.value='night'}
-    ">
 
-<input type="button" value="night"
-onclick=" if(this.value==='night'){
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color = 'white';
-    this.value = 'day'}
-else{
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color ='black';
-    this.value='night'}
-">
-
+        <input type="button" value="night"
+        onclick=" var target = document.querySelector('body')
+        if(this.value==='night'){
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+            this.value = 'day'
+        
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i<alist.length){
+            console.log(alist[i]);
+            alist[i].style.color ='powderblue';
+            i = i + 1;
+    }
+        }
+        else{
+            target.style.backgroundColor = 'white';
+            target.style.color ='black';
+            this.value='night'
+        
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i<alist.length){
+            console.log(alist[i]);
+            alist[i].style.color ='blue';
+            i = i + 1;
+    }
+        }
+             ">
+    
 
 </body>
 </html>
