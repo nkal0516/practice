@@ -1,0 +1,46 @@
+<html>
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta httmp-equiv="X-UA-Compatible" content="ie=edge">
+<title>multiplecation</title>      
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+ <div id="root">
+            <div>{{first}}times {{second}}?</div>
+            <form v-on:submit="onSubmitForm">
+            <input type = "number" v-model="value">
+            <button type = "submit">submit</button>
+            <div id ="result">{{result}}</div>
+            </form>
+        </div>
+<script>
+    const app = new Vue({
+        el:'#root',
+        data: {
+            first: Math.ceil(Math.random() * 9),
+            second: Math.ceil(Math.random() * 9),
+            value:'' ,
+            result:'',
+        },
+        methods:{
+            onSubmitForm(e){
+            e.preventDefault();
+            console.log(this.first, this.second, this.value);
+           if (this.first * this.second === parseInt(this.value)){
+                this.result = 'correct';
+                this.first = Math.ceil(Math.random() * 9)
+                this.second = Math.ceil(Math.random() * 9)
+                this.value = '';
+
+           }else{
+               this.result = 'wrong';
+               this.value ='';
+           }; },
+        }
+    });
+</script>
+    </body>
+</html>
