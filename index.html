@@ -4,9 +4,10 @@
 <head>
 <title>HTML - joonos</title>
 <meta charset="utf-8">
+<script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-   var guitar = ['img.html','elon1.html','elon.html','elon2.html','multiplecation.html','wordchain.html']
-   var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해','구구단','끝말잇기']
+   var guitar = ['img.html','elon1.html','elon.html','elon2.html','multiplecation.html'];
+   var guitarname= ['데비악마 사진모음❤️','전설의 시작','꼴은날','코인안해','구구단'];
 </script>
 <script src = "color.js"></script>
 </head>
@@ -18,23 +19,17 @@
     onclick=" ndchanger(this); ">
 
     
-     <h2>애국가</h2>
+     <a href ="text.html"><h2>Text</h2></a>
     
-    <ol>
-       <p> <li><a href ="./kr n anthem/1.html">1절</a></li>
-           <li><a href ="./kr n anthem/2.html">2절</a></li>
-           <li><a href ="./kr n anthem/3.html">3절</a></li>
-           <li><a href ="./kr n anthem/4.html">4절</a></li></p>
-        
-    </ol>
 
-    <h2>chess openings</h2>
+
+    <h2>Picture</h2>
     <ol>
         <li><a href="./chess openings/bird's.html">bird's opening</a></li>
         <li><a href="./chess openings/lonsys.html">london system</a></li>
     </ol>
 
-    <h2>기타</h2>
+    <h2>Video</h2>
     
     <ul>
         <script>
@@ -46,36 +41,9 @@
         </script>
         </ul>
 
+ <input type="button" value="night" onclick=" ndchanger(this); "> <h3>day/night 버튼</h3>
 
-        <input type="button" value="night"
-        onclick=" var target = document.querySelector('body')
-        if(this.value==='night'){
-            target.style.backgroundColor = 'black';
-            target.style.color = 'white';
-            this.value = 'day'
         
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i<alist.length){
-            console.log(alist[i]);
-            alist[i].style.color ='powderblue';
-            i = i + 1;
-    }
-        }
-        else{
-            target.style.backgroundColor = 'white';
-            target.style.color ='black';
-            this.value='night'
-        
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i<alist.length){
-            console.log(alist[i]);
-            alist[i].style.color ='blue';
-            i = i + 1;
-    }
-        }
-             ">
     
 
 </body>
