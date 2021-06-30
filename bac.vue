@@ -57,7 +57,7 @@ export default {
             else{// wrong answers
             if(this.tries.length >= 9){//10th try
             this.result =`YOU were WRONG 10 times! the answer was ${this.answer.join('')}!`
-            alert('game restart.');
+            alert('game over.');
             this.value = '';
             this.tries =[];
             this.answer = getNumbers();
