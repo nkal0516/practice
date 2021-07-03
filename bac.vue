@@ -1,11 +1,14 @@
 <template>
     <div>
+        
         <h1>{{result}}</h1>
         <form @submit.prevent="onSubmitForm">
           <input ref="answer" maxlength="4" v-model="value" />
         <button type="submit">입력(Enter)</button>
-        </form>4 digits.
+        </form> 4 digits
         <hr/>
+        
+       
     <div>try:{{tries.length}}</div>
     <ul>
         <li v-for="(t,i) in tries" :key='i'>
