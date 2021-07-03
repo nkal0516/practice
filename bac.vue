@@ -4,7 +4,8 @@
         <form @submit.prevent="onSubmitForm">
           <input ref="answer" maxlength="4" v-model="value" />
         <button type="submit">입력(Enter)</button>
-        </form>
+        </form>4 digits.
+        <hr/>
     <div>try:{{tries.length}}</div>
     <ul>
         <li v-for="(t,i) in tries" :key='i'>
