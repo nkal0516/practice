@@ -1,6 +1,6 @@
 
 import Vue from 'vue';
 
-import bac from './agility';
+import agility from './agility';
 
-new Vue(bac).$mount('#root');
+new Vue(agility).$mount('#root');

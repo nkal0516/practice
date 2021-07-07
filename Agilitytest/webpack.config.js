@@ -21,8 +21,9 @@ module.exports = {
             test:/\.css$/,
             use:['vue-style-loader',
                   'css-loader',]
+
         },
-        description.replace(/(?:\r\n|\r|\n)/g, '<br />')
+
 
         
       ],
