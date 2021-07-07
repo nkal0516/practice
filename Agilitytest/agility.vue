@@ -1,7 +1,7 @@
 <template>
 <div>
 <div id="screen" :class="state" @click="onClickScreen">{{message}}</div>
-<div>avg : {{result.reduce((a,c) => a + c,0)/result.length ||0}}ms <br> response time : {{result[result.length-1]}}ms</div>
+<div> response time : {{result[result.length-1]}}ms <br> avg : {{result.reduce((a,c) => a + c,0)/result.length ||0}}ms</div>
 <button @click="onReset">reset</button>
     </div>
         
