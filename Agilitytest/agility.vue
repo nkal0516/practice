@@ -1,13 +1,12 @@
 <template>
 <div>
 <div id="screen" :class="state" @click="onClickScreen">{{message}}</div>
-<div>AVG time:{{result.reduce((a,c) => a + c,0)/result.length ||0}}ms</div>
+<div>avg : {{result.reduce((a,c) => a + c,0)/result.length ||0}}ms <br> response time : {{result[result.length-1]}}ms</div>
 <button @click="onReset">reset</button>
     </div>
         
     
 </template>
-
 <script>
 let startTime = 0;
 let endTime = 0;
@@ -16,13 +15,15 @@ export default{
     data(){
         return{
             result: [],
+            result1: ``,
             state:'waiting',
-            message:'click to start',
+            message:'Click to start',
         };
     },
     methods:{
         onReset(){
             this.result=[];
+            this.result1='';
         },
         onClickScreen(){
             if(this.state === 'waiting'){ 
@@ -42,6 +43,7 @@ export default{
                 this.state = 'waiting';
                 this.message = 'Click to start';
                 this.result.push(endTime - startTime);
+                this.result1.push(`${endTime - startTime}`);
             }
         }
     },
