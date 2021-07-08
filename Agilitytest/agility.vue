@@ -1,12 +1,14 @@
 <template>
 <div>
 <div id="screen" :class="state" @click="onClickScreen">{{message}}</div>
-<div> response time : {{result[result.length-1]}}ms <br> avg : {{result.reduce((a,c) => a + c,0)/result.length ||0}}ms</div>
+<template v-if ="result.length">
+<div> response time : {{result[result.length-1]}}ms <br> avg : {{average}}ms</div>
+
 <button @click="onReset">reset</button>
-    </div>
-        
-    
 </template>
+   </div>
+</template>
+
 <script>
 let startTime = 0;
 let endTime = 0;
@@ -15,10 +17,14 @@ export default{
     data(){
         return{
             result: [],
-            result1: ``,
             state:'waiting',
             message:'Click to start',
         };
+    },
+    computed:{
+        average(){
+            return this.result.reduce((a,c)=>a+c,0) / this.result.length || 0;
+        }
     },
     methods:{
         onReset(){
@@ -28,7 +34,7 @@ export default{
         onClickScreen(){
             if(this.state === 'waiting'){ 
                 this.state='ready';
-                this.message='Click after screen is green';
+                this.message='Click after screen is green'; 
                timeout = setTimeout(() => {
                     this.state ='now';
                     this.message='CLICK NOW!';
