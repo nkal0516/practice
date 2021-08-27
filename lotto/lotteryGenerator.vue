@@ -25,7 +25,7 @@ function getWinningNumbers(){
 }
 
 
-
+const timeOuts =[];
 export default {
   components:{ ballMaker, }, 
     data(){
@@ -52,11 +52,11 @@ export default {
     },
     ballProjecter(){
            for (let i =0; i < this.winningNumbers.length - 1; i++){
-                setTimeout(() => {
+              timeOuts[i]=  setTimeout(() => {
                     this.winningBalls.push(this.winningNumbers[i]);
                 }, (i + 1) * 1000);
             }
-            setTimeout(() =>{
+          timeOuts[6] = setTimeout(() =>{
                 this.bonus = this.winningNumbers[6];
                 this.redo = true;
             },7000);
@@ -67,10 +67,19 @@ export default {
     },
 
     beforeDestroy(){
-
-
+        timeOuts.forEach((t)=>{
+            clearTimeout(t);
+        });
        },
-       watch:{},
+       watch:{
+           redo(value, oldValue){
+               console.log(value,oldValue);
+
+                   if(value === null){
+                   this.ballProjecter();
+           }
+           }
+       },
     
 };
 </script>
